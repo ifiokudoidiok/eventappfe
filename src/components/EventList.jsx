@@ -25,7 +25,7 @@ export const EventList = () => {
               </Box>
               <Box className='eventIcons'>
                 <Link to={`/edit/${event.id}`} title="Edit Event">
-                  <Box>
+                  <Box cursor='pointer'>
                     <Icon color='black'
                      as={MdEdit}
                     >
@@ -45,6 +45,7 @@ export const EventList = () => {
                     removeEvent(event.id);
                   }}
                   title="Remove Event"
+                  cursor='pointer'
                 >
                   <Icon w={20} h={20}
                     as={MdDeleteForever}

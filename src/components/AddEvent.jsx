@@ -33,7 +33,6 @@ export const AddEvent = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     const newEvent = {
-      // id: events.length + 1,
       title,
       description,
       start_date: selectedstart_date,
@@ -67,7 +66,6 @@ export const AddEvent = () => {
           <Box>
             <label htmlFor="description">Description: </label>
             <Input
-Input
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               type="text"
@@ -83,7 +81,7 @@ Input
               onChange={changeDate}
             />
           </Box><br/>
-          <Box>
+          <Box cursor='pointer'>
             <button>Add Event</button>
           </Box><br/>
           <Box>
