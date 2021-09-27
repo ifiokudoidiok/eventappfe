@@ -3,6 +3,8 @@ import { Link, useHistory } from "react-router-dom";
 import Calendar from "react-calendar";
 import moment from "moment";
 
+import { Box, Input } from "@chakra-ui/react"
+
 import axios from "axios";
 
 import "react-calendar/dist/Calendar.css";
@@ -49,43 +51,45 @@ export const AddEvent = () => {
 
   return (
     <React.Fragment>
-      <div>
+      <Box className='addEvntContainer'>
         <form onSubmit={onSubmit}>
-          <div>
-            <label htmlFor="title">Title of Event:</label>
-            <input
+          <Box>
+            <label htmlFor="title">Title of Event: </label>
+            <Input
+            size="xl"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               type="text"
-              placeholder="Enter title"
+              placeholder="Enter Title"
             />
-          </div>
-          <div>
-            <label htmlFor="description">Description:</label>
-            <input
+          </Box><br/>
+          <Box>
+            <label htmlFor="description">Description: </label>
+            <Input
+Input
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               type="text"
               placeholder="Enter Description"
             />
-          </div>
-          <div>
-            <label>Set Dates</label>
+          </Box><br/>
+          <Box>
+            <label>Pick Dates</label>
             <Calendar
               minDate={today}
               selectRange
               value={dates}
               onChange={changeDate}
             />
-          </div>
-          <div>
+          </Box><br/>
+          <Box>
             <button>Add Event</button>
-          </div>
-          <div>
+          </Box><br/>
+          <Box>
             <Link to="/">Cancel</Link>
-          </div>
+          </Box>
         </form>
-      </div>
+      </Box>
     </React.Fragment>
   );
 };

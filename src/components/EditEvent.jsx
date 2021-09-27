@@ -1,6 +1,9 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
 
+
+import { Box, Input, } from "@chakra-ui/react"
+
 import Calendar from "react-calendar";
 import moment from "moment";
 
@@ -70,11 +73,11 @@ export const EditEvent = (route) => {
 
   return (
     <React.Fragment>
-      <div>
+      <Box className='addEvntContainer'>
         <form onSubmit={onSubmit}>
-          <div>
-            <label htmlFor="title">Name of Event</label>
-            <input
+          <Box>
+            <label htmlFor="title">Name of Event: </label>
+            <Input
               value={selectedEvent.title}
               onChange={(e) =>
                 setSelectedEvent({ ...selectedEvent, title: e.target.value })
@@ -82,10 +85,10 @@ export const EditEvent = (route) => {
               type="text"
               placeholder="Enter title"
             />
-          </div>
-          <div>
-            <label htmlFor="description">Description</label>
-            <textarea
+          </Box><br/>
+          <Box>
+            <label htmlFor="description">Description: </label>
+            <Input
               value={selectedEvent.description}
               onChange={(e) =>
                 setSelectedEvent({
@@ -96,8 +99,8 @@ export const EditEvent = (route) => {
               type="text"
               placeholder="Enter description"
             />
-          </div>
-          <div>
+          </Box><br/>
+          <Box>
             <Calendar
               minDate={today}
               selectRange
@@ -107,15 +110,15 @@ export const EditEvent = (route) => {
               ]}
               onChange={changeDate}
             />
-          </div>
-          <div>
+          </Box><br/>
+          <Box>
             <button>Edit Event</button>
-          </div>
-          <div>
+          </Box><br/>
+          <Box>
             <Link to="/">Cancel</Link>
-          </div>
+          </Box>
         </form>
-      </div>
+      </Box>
     </React.Fragment>
   );
 };
