@@ -1,3 +1,7 @@
+This App is hosted [here](https://eventappfe.netlify.app/)
+
+Follow the instructions below to run the App locally
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
